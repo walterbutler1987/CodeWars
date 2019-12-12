@@ -10,9 +10,20 @@ Return the total figure the individual will receive as a string prefixed with "Â
 
 */
 
+//Javascript
 function bonusTime(salary, bonus) {
   if(bonus ==  true)
     return ("\u00A3" + (salary * 10));
   else
     return ("\u00A3" + salary);
+}
+
+//Java
+public class Kata{
+  public static String bonusTime(final int salary, final boolean bonus) {
+    if(bonus == true)
+      return ("\u00A3" + (salary*10));
+    else 
+      return ("\u00A3" + salary);
+  }
 }
