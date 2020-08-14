@@ -1,0 +1,17 @@
+import java.util.Arrays;
+public class Kata {
+  public static boolean isAnagram(String test, String original) {
+    String word1 = test;
+    String word2 = original;
+    
+    if(word1.length() != word2.length()){
+      return false;
+    } else {
+      char[] word1A = word1.toLowerCase().toCharArray();  
+      char[] word2A = word2.toLowerCase().toCharArray();  
+      Arrays.sort(word1A);  
+      Arrays.sort(word2A);
+      return Arrays.equals(word1A, word2A);
+    }
+  }
+}
