@@ -1,0 +1,96 @@
+class Kata {
+    static String toLeetSpeak(final String speak) {
+        char[] normal = new char[speak.length()];
+
+        for(int i = 0; i < speak.length(); i++){
+            normal[i] = speak.charAt(i);
+        }
+
+        for(int i = 0; i < normal.length; i++){
+            switch(normal[i]){
+                case 'A':
+                    normal[i] = '@';
+                    break;
+                case 'B':
+                    normal[i] = '8';
+                    break;
+                case 'C':
+                    normal[i] = '(';
+                    break;
+                case 'D':
+                    normal[i] = 'D';
+                    break;
+                case 'E':
+                    normal[i] = '3';
+                    break;
+                case 'F':
+                    normal[i] = 'F';
+                    break;
+                case 'G':
+                    normal[i] = '6';
+                    break;
+                case 'H':
+                    normal[i] = '#';
+                    break;
+                case 'I':
+                    normal[i] = '!';
+                    break;
+                case 'J':
+                    normal[i] = 'J';
+                    break;
+                case 'K':
+                    normal[i] = 'K';
+                    break;
+                case 'L':
+                    normal[i] = '1';
+                    break;
+                case 'M':
+                    normal[i] = 'M';
+                    break;
+                case 'N':
+                    normal[i] = 'N';
+                    break;
+                case 'O':
+                    normal[i] = '0';
+                    break;
+                case 'P':
+                    normal[i] = 'P';
+                    break;
+                case 'Q':
+                    normal[i] = 'Q';
+                    break;
+                case 'R':
+                    normal[i] = 'R';
+                    break;
+                case 'S':
+                    normal[i] = '$';
+                    break;
+                case 'T':
+                    normal[i] = '7';
+                    break;
+                case 'U':
+                    normal[i] = 'U';
+                    break;
+                case 'V':
+                    normal[i] = 'V';
+                    break;
+                case 'W':
+                    normal[i] = 'W';
+                    break;
+                case 'X':
+                    normal[i] = 'X';
+                    break;
+                case 'Y':
+                    normal[i] = 'Y';
+                    break;
+                case 'Z':
+                    normal[i] = '2';
+                    break;
+            }
+        }
+      
+        StringBuilder l33t = new StringBuilder();
+        l33t.append(normal);
+        return l33t.toString();
+    }
+}
