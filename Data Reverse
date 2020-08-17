@@ -1,0 +1,15 @@
+public static int[] DataReverse(int[] data) {
+    int m = 0, p = data.length - 8;
+    int[] result = new int[data.length];
+    
+    while(p > m){
+      for(int i = 0; i < 8; i++){
+        result[p + i] = data[m + i];
+        result[m + i] = data[p + i];
+      }
+      m += 8;
+      p -= 8;
+    }
+    
+    return result;
+  }
