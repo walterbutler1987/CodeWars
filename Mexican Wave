@@ -1,0 +1,21 @@
+public class MexicanWave {
+    public static String[] wave(String str) {
+        int count = strCount(str);
+        String[] result = new String[count];
+        for(int i = 0, j = 0; i < result.length; i++,j++){
+            char index = str.charAt(j);
+            while(Character.isWhitespace(index)){
+                index = str.charAt(++j);
+            }
+            StringBuilder newString = new StringBuilder(str);
+            newString.setCharAt(j, Character.toUpperCase(index));
+            result[i] = newString.toString();
+        }
+        return result;
+    }
+
+    private static int strCount(String str) {
+        int whiteSpaceCount = (int) str.codePoints().filter(Character::isWhitespace).count();
+        return str.length() - whiteSpaceCount;
+    }
+}
