@@ -1,0 +1,15 @@
+public static int findShort(String s) {
+        int num = 0;
+
+        String delim = "[ ]";
+        String[] words = s.split(delim);
+        num = words[0].length();
+
+        for(int i = 0; i < words.length; i++){
+            if(num > words[i].length()){
+                num = words[i].length();
+            }
+        }
+
+        return num;
+    }
