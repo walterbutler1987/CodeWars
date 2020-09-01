@@ -1,0 +1,20 @@
+public static String makeComplement(String dna) {
+        StringBuilder DNAreturn = new StringBuilder();
+
+        for(int i = 0; i < dna.length(); i++){
+            char x = dna.charAt(i);
+            if(dna.charAt(i) == 'A'){
+                DNAreturn.append('T');
+            }
+            if(dna.charAt(i) == 'T'){
+                DNAreturn.append('A');
+            }
+            if(dna.charAt(i) == 'C'){
+                DNAreturn.append('G');
+            }
+            if(dna.charAt(i) == 'G'){
+                DNAreturn.append('C');
+            }
+        }
+        return DNAreturn.toString();
+    }
