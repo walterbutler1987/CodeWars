@@ -1,0 +1,11 @@
+public static boolean isSquare(int n) {
+    if(n == 0){
+        return true;
+    }
+    double result = Math.sqrt(n);
+    if(n % result ==  0){
+        return true;
+    } else {
+        return false;
+    }
+}
