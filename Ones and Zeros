@@ -1,0 +1,10 @@
+public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+        int total = 0, currentValue = 1;
+        for(int i = binary.size() - 1; i >= 0; i--){
+            if(binary.get(i) == 1){
+                total += currentValue;
+            }
+            currentValue *= 2;
+        }
+        return total;
+    }
