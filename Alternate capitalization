@@ -1,0 +1,32 @@
+/*
+Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+
+For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+
+The input will be a lowercase string with no spaces.
+
+Good luck!
+*/
+
+public static String[] capitalize(String s){
+        String[] results = new String[2];
+        String s1 = "";
+        String s2 = "";
+        char[] letters1 = s.toCharArray();
+        char[] letters2 = s.toCharArray();
+
+        for(int i = 0; i < letters1.length; i+=2){
+            letters1[i] = Character.toUpperCase(letters1[i]);
+        }
+
+        for(int i = 1; i < letters2.length; i+=2){
+            letters2[i] = Character.toUpperCase(letters2[i]);
+        }
+
+        s1 = String.valueOf(letters1);
+        s2 = String.valueOf(letters2);
+        results[0] = s1;
+        results[1] = s2;
+
+        return results;
+    }
