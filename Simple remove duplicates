@@ -1,0 +1,56 @@
+/*
+In this Kata, you will remove the left-most duplicates from a list of integers and return the result.
+
+// Remove the 3's at indices 0 and 3
+// followed by removing a 4 at index 1
+solve([3, 4, 4, 3, 6, 3]); // => [4, 6, 3]
+*/
+
+public static int[] solve(int [] arr){
+    List list = toList(reverse(arr));
+    int[] array = backToArray((ArrayList) remove((ArrayList) list));
+    return reverse(array);
+}
+
+private static int[] reverse(int[] arr){
+    int n = arr.length;
+    for(int i = 0; i < n/2; i++){
+        int temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n-i-1] = temp;
+    }
+
+    return arr;
+}
+
+private static List<Integer> toList(int[] arr){
+    List<Integer> list = new ArrayList<Integer>(arr.length);
+    int count = list.size();
+    for(int i : arr){
+        list.add(i);
+    }
+
+    return list;
+}
+
+private static int[] backToArray(ArrayList list){
+    int[] array = new int[list.size()];
+    Iterator<Integer> iterator = Arrays.stream(array).iterator();
+    for(int i = 0; i < array.length; i++){
+        array[i] = (int) list.get(i);
+    }
+
+    return array;
+}
+
+private static List remove(ArrayList list){
+    for(int i = 0; i < list.size(); i++){
+        for(int j = i + 1; j < list.size(); j++){
+            if(list.get(i) == list.get(j)){
+                list.remove(j);
+                j--;
+            }
+        }
+    }
+    return list;
+}
