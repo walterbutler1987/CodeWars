@@ -1,0 +1,38 @@
+/*
+The new "Avengers" movie has just been released! There are a lot of people at the cinema box office standing in a huge line. Each of them has a single 100, 50 or 25 dollar bill. An "Avengers" ticket costs 25 dollars.
+
+Vasya is currently working as a clerk. He wants to sell a ticket to every single person in this line.
+
+Can Vasya sell a ticket to every person and give change if he initially has no money and sells the tickets strictly in the order people queue?
+
+Return YES, if Vasya can sell a ticket to every person and give change with the bills he has at hand at that moment. Otherwise return NO.
+ */
+
+    public static String tickets(int[] peopleInLine){
+        int a25 = 0;
+        int b50 = 0;
+
+        for(int i = 0; i < peopleInLine.length;i++){
+            if(peopleInLine[i] == 25){
+                a25++;
+            } else if (peopleInLine[i] == 50){
+                a25--;
+                b50++;
+                if(a25 < 0){
+                    return "NO";
+                }
+            } else if(peopleInLine[i] == 100){
+                if(b50 == 0 & a25 >= 3){
+                    a25 -= 3;
+                } else {
+                    a25--;
+                    b50--;
+                }
+                if(a25 < 0|| b50 < 0){
+                    return "NO";
+                }
+            }
+        }
+        return "YES";
+    }
+}
